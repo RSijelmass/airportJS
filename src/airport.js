@@ -29,13 +29,3 @@ function Airport(capacity = 20, weather = new Weather()) {
   };
 };
 
-// Airport.prototype.LandInAirport = function(plane){
-//   planes.push(plane)
-// };
-
-airport = new Airport(40)
-// console.log(airport.capacity)
-// console.log(airport.planes)
-// airport.LandInAirport('plane')
-// console.log(airport.planes)
-console.log(airport.weather.isBad())

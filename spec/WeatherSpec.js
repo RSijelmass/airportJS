@@ -1,5 +1,6 @@
 describe('Weather', function() {
 	var weather;
+	var weathermock = jasmine.createSpyObj('weather', ['randomNumber', 'isBad']);
 	
 	beforeEach(function() {
 		weather = new Weather();
