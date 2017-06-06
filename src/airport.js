@@ -1,8 +1,13 @@
 function Airport(capacity = 20) {
   this.capacity = capacity;
   this.planes = [];
+
   this.LandInAirport = function(plane){
     this.planes.push(plane)
+	};
+
+	this.LeaveAirport = function(plane) {
+		this.planes.pop(plane)				
   };
 }
 
