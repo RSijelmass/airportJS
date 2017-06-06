@@ -32,7 +32,7 @@ describe Airport do
     end
 
     describe "#leave_airport" do
-      it "raises an error when a plane is attempting to lean an airport with bad weather" do
+      it "raises an error when a plane is attempting to leave an airport with bad weather" do
         airport = described_class.new(1, double(:weather, bad_weather?: true))
         expect {airport.leave_airport }.to raise_error "Due to stormy weather, plane cannot take off"
       end
