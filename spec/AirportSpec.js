@@ -17,17 +17,26 @@ describe('airport', function() {
   describe ('land in airport', function(){
     it('takes in a plane', function(){
       plane = new Plane();
-      airport.LandInAirport('plane')
-      expect(airport.planes).toEqual(["plane"]);
+      airport.LandInAirport(plane)
+      expect(airport.planes).toEqual([plane]);
     });
   });
 
 	describe('plane leaves airport', function() {
+    beforeEach(function(){
+      weather = new Weather()
+      airport2 = new Airport(20, weather)
+      plane = new Plane();
+      airport2.LandInAirport(plane);
+    })
 		it('allows plane to leave the airport', function() {
-			plane = new Plane();
-			airport.LandInAirport('plane');
-			airport.LeaveAirport('plane');
-			expect(airport.planes).toEqual([]);
+      spyOn(weather, 'isBad').and.returnValue(false);
+			airport2.LeaveAirport(plane);
+			expect(airport2.planes).toEqual([]);
 		});
+    it('throws an error when weather is bad', function(){
+      spyOn(weather, 'isBad').and.returnValue(true);
+      expect(airport2.LeaveAirport).toThrow('weather is too bad')
+    });
 	});
 });

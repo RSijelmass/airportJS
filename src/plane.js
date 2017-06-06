@@ -10,7 +10,7 @@ function Plane(){
 	};
 }
 
-plane = new Plane();
-console.log(plane.inAirport);
-plane.Land();
-console.log(plane.inAirport);
+// plane = new Plane();
+// console.log(plane.inAirport);
+// plane.Land();
+// console.log(plane.inAirport);
