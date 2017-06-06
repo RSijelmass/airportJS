@@ -3,7 +3,7 @@ describe('airport', function() {
   beforeEach(function(){
     airport = new Airport(20);
   });
-  describe('initializes with the capacity', function(){
+  it('initializes with the capacity', function(){
     expect(airport.capacity).toEqual(20);
   });
 });
